@@ -3,17 +3,21 @@ import asyncio
 import logging
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters.command import Command
+from aiogram.utils.keyboard import InlineKeyboardMarkup, ReplyKeyboardMarkup
+from aiogram import F
+
+from bot.data import quiz_data
+
+
+token = '7094323356:AAG6tSBYvoTIqhqk-C0WeNXT89QpOQDTS8g'
+
+logging.basicConfig(level=logging.INFO)
+bot = Bot(token=token)
+dp = Dispatcher()
+DB_NAME = 'quiz_bot.db'
 
 
 async def main() -> None:
-    logging.basicConfig(level=logging.INFO)
-    bot = Bot(token=os.getenv('token'))
-    dp = Dispatcher()
-
-    @dp.message(Command('start'))
-    async def cmd_start(message: types.Message) -> None:
-        await message.answer('Привет! Я твой новый бот.')
-
     await dp.start_polling(bot)
 
 if __name__ == '__main__':
