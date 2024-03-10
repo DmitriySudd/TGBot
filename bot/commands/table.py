@@ -1,7 +1,6 @@
 import aiosqlite
 
-
-DB_NAME = 'quiz_bot.db'
+from bot.__main__ import DB_NAME
 
 
 async def create_table():

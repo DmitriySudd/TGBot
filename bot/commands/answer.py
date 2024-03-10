@@ -21,7 +21,7 @@ async def right_answer(callback: types.CallbackQuery):
     current_question_index += 1
     await update_quiz_index(callback.from_user.id, current_question_index)
 
-
+    # Получение текущего вопроса из словаря состояний пользователя
     if current_question_index < len(quiz_data):
         await get_question(callback.message, callback.from_user.id)
     else:

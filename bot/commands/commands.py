@@ -1,12 +1,9 @@
-import os
-import asyncio
-import logging
-from aiogram import Bot, Dispatcher, types
+
 from aiogram import F
 from aiogram.filters.command import Command
-from aiogram import Bot, types, Dispatcher
+from aiogram import types
 
-from bot.__main__ import dp
+from __main__ import dp
 from bot.data import quiz_data
 from bot.commands.table import update_quiz_index, get_quiz_index
 from bot.commands.keyboard import generate_options_keyboard
@@ -25,7 +22,7 @@ async def cmd_start(message: types.Message) -> None:
 
 
 # Хэндлер на команду /quiz
-@dp.message(F.text=="Начать игру")
+@dp.message(F.text == "Начать игру")
 @dp.message(Command("quiz"))
 async def cmd_quiz(message: types.Message):
     await message.answer(f"Давайте начнем квиз!")

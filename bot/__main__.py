@@ -1,12 +1,13 @@
-import os
+
 import asyncio
 import logging
-from aiogram import Bot, Dispatcher, types
-from aiogram.filters.command import Command
-from aiogram.utils.keyboard import InlineKeyboardMarkup, ReplyKeyboardMarkup
-from aiogram import F
+from aiogram import Bot, Dispatcher
 
-from bot.data import quiz_data
+import data
+from commands import keyboard
+from commands import table
+from commands import commands
+from commands import answer
 
 
 token = '7094323356:AAG6tSBYvoTIqhqk-C0WeNXT89QpOQDTS8g'
